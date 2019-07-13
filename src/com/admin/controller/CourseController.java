@@ -1,4 +1,4 @@
-package com.controller;
+package com.admin.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
@@ -9,7 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.service.CourseService;
+import com.admin.service.CourseService;
 
 @Controller
 @Transactional
@@ -22,6 +22,6 @@ public class CourseController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(ModelMap model, HttpServletRequest request) {
 		System.out.println("AAAAAAAAAAAAAA: " + courseService.getAllCourse().size());
-		return "admin/index";
+		return "admin/home";
 	}
 }

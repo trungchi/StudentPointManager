@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
-encoding//src/com/controller/CourseController.java=UTF-8
+encoding//src/com/admin/controller/CourseController.java=UTF-8
+encoding//src/com/admin/controller/TestController.java=UTF-8
