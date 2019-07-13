@@ -20,12 +20,12 @@ public class UserClass implements java.io.Serializable {
 
 	private UserClassId id;
 	private Classroom classroom;
-	private User user;
+	private UserData user;
 
 	public UserClass() {
 	}
 
-	public UserClass(UserClassId id, Classroom classroom, User user) {
+	public UserClass(UserClassId id, Classroom classroom, UserData user) {
 		this.id = id;
 		this.classroom = classroom;
 		this.user = user;
@@ -56,11 +56,11 @@ public class UserClass implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_name", nullable = false, insertable = false, updatable = false)
-	public User getUser() {
+	public UserData getUser() {
 		return this.user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(UserData user) {
 		this.user = user;
 	}
 

@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.model.User;
+import com.model.UserData;;
 
 @Repository
 public class UserDAO {
@@ -15,31 +16,31 @@ public class UserDAO {
 	private SessionFactory sessionFactory;
 	
 	@SuppressWarnings("unchecked")
-	public List<User> getAllUser(){
+	public List<UserData> getAllUser(){
 		Session session = sessionFactory.getCurrentSession();
-		List<User> list = session.createQuery("FROM User").list();
+		List<UserData> list = session.createQuery(" FROM UserData ").list();
 		return list;
 	}
 	
-	public void insertUser(User user) {
+	public void insertUser(UserData user) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(user);
 	}
 	
-	public void deleteRole(User user) {
+	public void deleteRole(UserData user) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(user);
 	}
 	
-	public void updateRole(User user) {
+	public void updateUser(UserData user) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(user);
 	}
 
 	
-	public User getUserByID(String userName) {
+	public UserData getUserByID(String userName) {
 		Session session = sessionFactory.getCurrentSession();
-		User user = (User) session.get(User.class, userName);
+		UserData user = (UserData) session.get(UserData.class, userName);
 		return user;
 	}
 }

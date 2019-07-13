@@ -18,7 +18,7 @@ public class ExamResult implements java.io.Serializable {
 
 	private int pointId;
 	private Exam exam;
-	private User user;
+	private UserData user;
 	private double marks;
 	private boolean status;
 	private String userManager;
@@ -26,7 +26,7 @@ public class ExamResult implements java.io.Serializable {
 	public ExamResult() {
 	}
 
-	public ExamResult(int pointId, Exam exam, User user, double marks, boolean status, String userManager) {
+	public ExamResult(int pointId, Exam exam, UserData user, double marks, boolean status, String userManager) {
 		this.pointId = pointId;
 		this.exam = exam;
 		this.user = user;
@@ -58,11 +58,11 @@ public class ExamResult implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_name", nullable = false)
-	public User getUser() {
+	public UserData getUser() {
 		return this.user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(UserData user) {
 		this.user = user;
 	}
 

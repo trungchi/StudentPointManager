@@ -20,13 +20,13 @@ public class UserRole implements java.io.Serializable {
 
 	private UserRoleId id;
 	private Role role;
-	private User user;
+	private UserData user;
 	private boolean status;
 
 	public UserRole() {
 	}
 
-	public UserRole(UserRoleId id, Role role, User user, boolean status) {
+	public UserRole(UserRoleId id, Role role, UserData user, boolean status) {
 		this.id = id;
 		this.role = role;
 		this.user = user;
@@ -58,11 +58,11 @@ public class UserRole implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_name", nullable = false, insertable = false, updatable = false)
-	public User getUser() {
+	public UserData getUser() {
 		return this.user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(UserData user) {
 		this.user = user;
 	}
 

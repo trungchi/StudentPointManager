@@ -8,7 +8,7 @@
   <table-filter match-catalog="StudentPointManager" match-schema="dbo" match-name="ExamResult"/>
   <table-filter match-catalog="StudentPointManager" match-schema="dbo" match-name="Role"/>
   <table-filter match-catalog="StudentPointManager" match-schema="dbo" match-name="Subject"/>
-  <table-filter match-catalog="StudentPointManager" match-schema="dbo" match-name="user"/>
+  <table-filter match-catalog="StudentPointManager" match-schema="dbo" match-name="UserData"/>
   <table-filter match-catalog="StudentPointManager" match-schema="dbo" match-name="UserClass"/>
   <table-filter match-catalog="StudentPointManager" match-schema="dbo" match-name="UserRole"/>
 </hibernate-reverse-engineering>

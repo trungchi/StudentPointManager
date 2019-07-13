@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.admin.dao.RoleDAO;
 import com.admin.dao.UserDAO;
 import com.model.Role;
-import com.model.User;
+import com.model.UserData;
 
 @Service("UserService")
 @Transactional
@@ -18,23 +18,23 @@ public class UserService {
 	@Autowired
 	private UserDAO userDAO;
 	
-	public List<User> getAllUser(){
+	public List<UserData> getAllUser(){
 		return userDAO.getAllUser();
 	}
 	
-	public void insertUser(User user){
+	public void insertUser(UserData user){
 		userDAO.insertUser(user);
 	}
 	
-	public void deleteUser(User user){
+	public void deleteUser(UserData user){
 		userDAO.deleteRole(user);
 	}
 	
-	public void updateRole(User user){
-		roleDAO.updateRole(role);
+	public void updateRole(UserData user){
+		userDAO.updateUser(user);
 	}
 	
-	public Role getRoleByID(String id){
-		return roleDAO.getRoleByID(id);
+	public UserData getUserByID(String userName){
+		return userDAO.getUserByID(userName);
 	}
 }

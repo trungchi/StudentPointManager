@@ -11,10 +11,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.admin.dao.UserDAO;
 import com.admin.service.CourseService;
 import com.admin.service.RoleService;
 import com.admin.service.UserRoleService;
+import com.admin.service.UserService;
 import com.model.Role;
+import com.model.UserData;
 import com.model.UserRole;
 
 @Controller
@@ -29,18 +32,21 @@ public class TestController {
 	
 	@Autowired
 	private UserRoleService userRoleService;
+	
+	@Autowired
+	private UserService userService;
 
 	// Trang chủ
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(ModelMap model, HttpServletRequest request) {
-		System.out.println("AAAAAAAAAAAAAA: " + roleService.getAllRole().size());
-		List<UserRole> allUserRole = userRoleService.getAllUserRole();
-		for(UserRole role : allUserRole){
-			System.out.println(role.getId() + " - " + role.getRole() + " - " + role.isStatus());
+//		System.out.println("AAAAAAAAAAAAAA: " + userService.getAllUser().size());
+		List<UserData> allUserRole = userService.getAllUser();
+		for(UserData obj : allUserRole){
+			System.out.println(obj.getUserName() + " - " + obj.getFristName() + " - " + obj.getLastName());
 		}
 		
-//		UserRole r = userRoleService.getRoleByID("hoang");
-//		System.out.println("ROLE: " + r.getUser());
+		UserData o = userService.getUserByID("hoang");
+		System.out.println("ROLE: " + o.getFristName());
 		return "admin/home";
 	}
 }
