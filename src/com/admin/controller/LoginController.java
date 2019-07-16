@@ -11,11 +11,11 @@ import com.model.UserData;
 
 @Controller
 @Transactional
-@RequestMapping(value = "login")
+//@RequestMapping(value = "admin")
 public class LoginController {
 	@RequestMapping(value = "admin", method = RequestMethod.GET)
 	public String formLogin(ModelMap model) {
-		model.addAttribute("loginForm", new UserData());
+		model.addAttribute("userData", new UserData());
 		return "admin/login";
 	}
 }
